@@ -7,9 +7,12 @@ print(f"ROOT:{ROOT}")
 sys.path.append(ROOT)
 from app.generated import proto_pb2, proto_pb2_grpc
 
-class EmiService(proto_pb2_grpc.EmiService):
+class EmiService(proto_pb2_grpc.EmiServiceServicer):
     def Start(self, request, context):
-        return proto_pb2.StartResponse(status=200, message=f"Starte:{request.command}")
+        return proto_pb2.StartResponse(status=200, message=f"Started:{request.command}")
+    
+    def Stop(self, request, context):
+        return proto_pb2.StopResponse(status=200, message=f"Stopped:{request.command}")
     
 
 def serve(port=50051):

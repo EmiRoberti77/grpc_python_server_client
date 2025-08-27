@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bproto.proto\x12\x0b\x65mi_service\"\x1f\n\x0cStartRequest\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t\"0\n\rStartResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t2N\n\nEmiService\x12@\n\x05Start\x12\x19.emi_service.StartRequest\x1a\x1a.emi_service.StartResponse\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bproto.proto\x12\x0b\x65mi_service\"\x1f\n\x0cStartRequest\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t\"0\n\rStartResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x1e\n\x0bStopRequest\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t\"/\n\x0cStopResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t2\x8d\x01\n\nEmiService\x12@\n\x05Start\x12\x19.emi_service.StartRequest\x1a\x1a.emi_service.StartResponse\"\x00\x12=\n\x04Stop\x12\x18.emi_service.StopRequest\x1a\x19.emi_service.StopResponse\"\x00\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,6 +35,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_STARTREQUEST']._serialized_end=59
   _globals['_STARTRESPONSE']._serialized_start=61
   _globals['_STARTRESPONSE']._serialized_end=109
-  _globals['_EMISERVICE']._serialized_start=111
-  _globals['_EMISERVICE']._serialized_end=189
+  _globals['_STOPREQUEST']._serialized_start=111
+  _globals['_STOPREQUEST']._serialized_end=141
+  _globals['_STOPRESPONSE']._serialized_start=143
+  _globals['_STOPRESPONSE']._serialized_end=190
+  _globals['_EMISERVICE']._serialized_start=193
+  _globals['_EMISERVICE']._serialized_end=334
 # @@protoc_insertion_point(module_scope)

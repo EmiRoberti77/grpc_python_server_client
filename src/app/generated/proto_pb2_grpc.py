@@ -39,12 +39,23 @@ class EmiServiceStub(object):
                 request_serializer=proto__pb2.StartRequest.SerializeToString,
                 response_deserializer=proto__pb2.StartResponse.FromString,
                 _registered_method=True)
+        self.Stop = channel.unary_unary(
+                '/emi_service.EmiService/Stop',
+                request_serializer=proto__pb2.StopRequest.SerializeToString,
+                response_deserializer=proto__pb2.StopResponse.FromString,
+                _registered_method=True)
 
 
 class EmiServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Start(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Stop(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -57,6 +68,11 @@ def add_EmiServiceServicer_to_server(servicer, server):
                     servicer.Start,
                     request_deserializer=proto__pb2.StartRequest.FromString,
                     response_serializer=proto__pb2.StartResponse.SerializeToString,
+            ),
+            'Stop': grpc.unary_unary_rpc_method_handler(
+                    servicer.Stop,
+                    request_deserializer=proto__pb2.StopRequest.FromString,
+                    response_serializer=proto__pb2.StopResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -86,6 +102,33 @@ class EmiService(object):
             '/emi_service.EmiService/Start',
             proto__pb2.StartRequest.SerializeToString,
             proto__pb2.StartResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Stop(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/emi_service.EmiService/Stop',
+            proto__pb2.StopRequest.SerializeToString,
+            proto__pb2.StopResponse.FromString,
             options,
             channel_credentials,
             insecure,

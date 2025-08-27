@@ -17,3 +17,17 @@ class StartResponse(_message.Message):
     status: int
     message: str
     def __init__(self, status: _Optional[int] = ..., message: _Optional[str] = ...) -> None: ...
+
+class StopRequest(_message.Message):
+    __slots__ = ("command",)
+    COMMAND_FIELD_NUMBER: _ClassVar[int]
+    command: str
+    def __init__(self, command: _Optional[str] = ...) -> None: ...
+
+class StopResponse(_message.Message):
+    __slots__ = ("status", "message")
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    status: int
+    message: str
+    def __init__(self, status: _Optional[int] = ..., message: _Optional[str] = ...) -> None: ...
