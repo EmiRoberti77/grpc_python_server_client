@@ -3,10 +3,9 @@
 import grpc
 import warnings
 
-# added path manually for import relative to the project
-import src.app.generated.proto_pb2 as proto__pb2
+from . import proto_pb2 as proto__pb2
 
-GRPC_GENERATED_VERSION = '1.74.1'
+GRPC_GENERATED_VERSION = '1.74.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

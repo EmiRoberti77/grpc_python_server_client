@@ -5,7 +5,7 @@ import sys
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 print(f"ROOT:{ROOT}")
 sys.path.append(ROOT)
-from src.app.generated import proto_pb2, proto_pb2_grpc
+from app.generated import proto_pb2, proto_pb2_grpc
 
 class EmiService(proto_pb2_grpc.EmiService):
     def Start(self, request, context):

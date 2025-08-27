@@ -3,11 +3,11 @@ import sys
 import grpc
 import argparse
 
-ROOT = os.path.abspath(os.path.join(os.path.join(__file__), '..'))
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 print(f"ROOT:{ROOT}")
 sys.path.append(ROOT)
 
-from src.app.generated import proto_pb2, proto_pb2_grpc
+from app.generated import proto_pb2, proto_pb2_grpc
 
 def main(host:str='localhost', port:int=50051, command:str = 'RUN')->None:
     target = f"{host}:{port}"
